@@ -1,15 +1,17 @@
-var LikeButton = React.createClass({
-    getInitialState: function() {
-        return {
+class LikeButton extends React.Component {
+    constructor() {
+        super();
+        this.state = {
             liked: false
         };
-    },
-    handleClick: function(event) {
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick() {
         this.setState({
             liked: !this.state.liked
         });
-    },
-    render: function() {
+    }
+    render() {
         var text = this.state.liked ? 'like' : 'haven\'t liked';
         return (
             <p onClick={this.handleClick}>
@@ -17,7 +19,7 @@ var LikeButton = React.createClass({
             </p>
         );
     }
-});
+}
 
 ReactDOM.render(
     <LikeButton />,
