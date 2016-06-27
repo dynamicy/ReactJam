@@ -2,21 +2,38 @@ class LikeButton extends React.Component {
     constructor() {
         super();
         this.state = {
-            liked: false
+            liked: false,
+            hated: false
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleLikedClick = this.handleLikedClick.bind(this);
+        this.handleHatedClick = this.handleHatedClick.bind(this);
     }
-    handleClick() {
+    handleLikedClick() {
         this.setState({
             liked: !this.state.liked
         });
     }
+    handleHatedClick() {
+        this.setState({
+            hated: !this.state.hated
+        });
+    }
     render() {
-        var text = this.state.liked ? 'like' : 'haven\'t liked';
+        var textLiked = this.state.liked ? 'like' : 'haven\'t liked';
+        var textHated = this.state.hated ? 'hate' : 'haven\'t hated';
         return (
-            <p onClick={this.handleClick}>
-            You {text} this. Click to toggle.
-            </p>
+                <ul>
+                    <li>
+                        <p onClick={this.handleLikedClick}>
+                        You {textLiked} this. Click to toggle.
+                        </p>
+                    </li>
+                    <li>
+                        <p onClick={this.handleHatedClick}>
+                        You {textHated} this. Click to toggle.
+                        </p>
+                    </li>
+                </ul>
         );
     }
 }
