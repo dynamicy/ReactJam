@@ -1,5 +1,5 @@
 {
-  "name": "like-button",
+  "name": "popup",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "detached-jquery-1.10.2": "^1.10.2",
+    "flux-constants": "^0.2.2",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "webpack": "^1.13.1",

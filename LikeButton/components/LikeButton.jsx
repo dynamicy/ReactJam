@@ -3,35 +3,27 @@ class LikeButton extends React.Component {
         super();
         this.state = {
             liked: false,
-            hated: false
+            hated: false,
+            count: 0
         };
-        this.handleLikedClick = this.handleLikedClick.bind(this);
-        this.handleHatedClick = this.handleHatedClick.bind(this);
+//        this.handleLikedClick = this.handleLikedClick.bind(this);
+//        this.handleHatedClick = this.handleHatedClick.bind(this);
     }
-    handleLikedClick() {
-        this.setState({
-            liked: !this.state.liked
-        });
-    }
-    handleHatedClick() {
-        this.setState({
-            hated: !this.state.hated
-        });
-    }
+    
+//    handleLikedClick = () => this.setState({liked: !this.state.liked});
+
+//    handleHatedClick = () => this.setState({hated: !this.state.hated});
+
+    clickCounter = () => this.setState({count: this.state.count + 1});
+
     render() {
         var textLiked = this.state.liked ? 'like' : 'haven\'t liked';
         var textHated = this.state.hated ? 'hate' : 'haven\'t hated';
         return (
                 <ul>
                     <li>
-                        <p onClick={this.handleLikedClick}>
-                        You {textLiked} this. Click to toggle.
-                        </p>
-                    </li>
-                    <li>
-                        <p onClick={this.handleHatedClick}>
-                        You {textHated} this. Click to toggle.
-                        </p>
+                        <p onClick={this.clickCounter}>
+                        You Click {this.state.count} times.
                     </li>
                 </ul>
         );
